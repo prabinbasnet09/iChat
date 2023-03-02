@@ -186,7 +186,7 @@ const DetailsScreen = ({ navigation }) => {
           }}
           placeholder={"First Name"}
         />
-        <Button title="Go back" onPress={() => navigation.goBack()} />
+        <Button title="Go Back" onPress={() => navigation.goBack()} />
       </SafeAreaView>
     </ImageBackground>
   );
