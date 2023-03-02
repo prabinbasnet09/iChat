@@ -2,7 +2,9 @@ import React from "react";
 import {
   Button,
   View,
+  SafeAreaView,
   Text,
+  TextInput,
   Image,
   ImageBackground,
   StyleSheet,
@@ -72,7 +74,7 @@ const HomeScreen = ({ navigation }) => {
         <AppButton
           title={
             <>
-              <Icon name="apple" size={20} color="#fff"/>
+              <Icon name="apple" size={20} color="#fff" />
               {"  "}
               continue with apple
             </>
@@ -147,10 +149,46 @@ const HomeScreen = ({ navigation }) => {
 
 const DetailsScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Details Screen</Text>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-    </View>
+    <ImageBackground
+      source={require("./assets/detailpage.jpg")}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <SafeAreaView
+        style={{
+          flex: 1,
+          justifyContent: "flex-start",
+          // alignItems: "center",
+        }}
+      >
+        <Text
+          style={{
+            textAlign: "left",
+            fontSize: 35,
+            fontWeight: "900",
+            color: "#fff",
+            marginLeft: 30,
+            marginTop: 60,
+            marginBottom: 40,
+          }}
+        >
+          LET'S START{"\n"}WITH YOUR{"\n"}FIRST NAME...
+        </Text>
+        <TextInput
+          style={{
+            paddingHorizontal: 25,
+            paddingVertical: 15,
+            backgroundColor: "#fff",
+            color: "#000",
+            width: 360,
+            borderRadius: 50,
+            marginHorizontal: 30,
+            fontSize: 20,
+          }}
+          placeholder={"First Name"}
+        />
+        <Button title="Go back" onPress={() => navigation.goBack()} />
+      </SafeAreaView>
+    </ImageBackground>
   );
 };
 
