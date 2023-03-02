@@ -69,7 +69,7 @@ const HomeScreen = ({ navigation }) => {
             width: 300,
           }}
         >
-          THE HOTTEST SOCIAL MEDIA APP FOR CHILDREN & ADULTS!{" "}
+          THE HOTTEST SOCIAL MEDIA APP FOR CHILDREN {"&"} ADULTS!{" "}
         </Text>
         <AppButton
           title={
