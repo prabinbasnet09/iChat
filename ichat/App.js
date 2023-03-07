@@ -1,18 +1,12 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Image, ImageBackground, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/AntDesign";
-import EnterHeight from './Height';
-import EnterName from "./Name";
-import EnterEmail from "./Email";
-import EnterBirthDate from "./Birthdate";
+import EnterHeight from './components/Height';
+import EnterName from "./components/Name";
+import EnterEmail from "./components/Email";
+import EnterBirthDate from "./components/Birthdate";
 
 const Stack = createStackNavigator();
 

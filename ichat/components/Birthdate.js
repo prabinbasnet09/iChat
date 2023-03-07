@@ -5,7 +5,8 @@ import Icon from 'react-native-vector-icons/AntDesign';
 const EnterBirthDate = ({ navigation }) => {
     return (
       <ImageBackground
-        source={require("./assets/birthdate.jpg")}
+        //source={require("./assets/birthdate.jpg")}
+        source={require("../assets/birthdate.jpg")}
         style={{ width: "100%", height: "100%" }}
         resizeMode="cover"
       >
@@ -65,10 +66,11 @@ const EnterBirthDate = ({ navigation }) => {
                 marginLeft: 30,
                 paddingVertical: 10,
                 paddingHorizontal: 19,
-                fontSize: 8,
+                fontSize: 14,
                 fontWeight: "bold",
-                width: 71,
-                height: 71,
+                textAlign: "center",
+                width: 95,
+                height: 95,
                 borderRadius: 50,
               }}
               keyboardType="numeric"
@@ -84,10 +86,11 @@ const EnterBirthDate = ({ navigation }) => {
                 marginHorizontal: 20,
                 paddingVertical: 10,
                 paddingHorizontal: 26,
-                fontSize: 8,
+                fontSize: 14,
                 fontWeight: "bold",
-                width: 71,
-                height: 71,
+                textAlign: "center",
+                width: 95,
+                height: 95,
                 borderRadius: 50,
               }}
               placeholder={"DAY"}
@@ -100,14 +103,15 @@ const EnterBirthDate = ({ navigation }) => {
                 color: "#fff",
                 borderRadius: 50,
                 paddingVertical: 10,
-                paddingHorizontal: 25,
-                fontSize: 8,
+                paddingHorizontal: 20,
+                fontSize: 14,
                 fontWeight: "bold",
-                width: 71,
-                height: 71,
+                textAlign: "center",
+                width: 95,
+                height: 95,
                 borderRadius: 50,
               }}
-              placeholder={"Year"}
+              placeholder={"YEAR"}
               placeholderTextColor="#fff"
               color="#fff"
             />

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 const EnterHeight = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require("./assets/emailpage.jpg")}
+      source={require("../assets/emailpage.jpg")}
       style={{ width: "100%", height: "100%" }}
       resizeMode="cover"
     >

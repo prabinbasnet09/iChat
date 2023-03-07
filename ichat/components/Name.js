@@ -1,13 +1,13 @@
 import React from 'react';
-import {ImageBackground, Text, TextInput, TouchableOpacity, SafeAreaView} from 'react-native';
+import {ImageBackground, Text, TextInput, TouchableOpacity, SafeAreaView, View} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
 const EnterName = ({ navigation }) => {
     return (
       <ImageBackground
-        source={require("./assets/detailpage.jpg")}
-        style={{ width: "100%", height: "100%" }}
+        source={require("../assets/detailpage.jpg")}
+        style={{ width: "100%", height: "100%"}}
       >
         <SafeAreaView
           style={{
@@ -27,7 +27,7 @@ const EnterName = ({ navigation }) => {
               marginBottom: 40,
             }}
           >
-            LET'S START{"\n"}WITH YOUR{"\n"}FIRST NAME...
+            Let's Start{"\n"}With Your{"\n"}Basic Information...
           </Text>
           <TextInput
             style={{
@@ -36,11 +36,28 @@ const EnterName = ({ navigation }) => {
               backgroundColor: "#fff",
               color: "#000",
               borderRadius: 50,
+              width: 850,
               marginHorizontal: 30,
               fontSize: 15,
+              
             }}
             placeholder={"First Name"}
           />
+          <View style={{ height: 20 }} />
+          <TextInput
+            style={{
+              paddingHorizontal: 25,
+              paddingVertical: 10,
+              backgroundColor: "#fff",
+              color: "#000",
+              borderRadius: 50,
+              width: 850,
+              marginHorizontal: 30,
+              fontSize: 15,
+            }}
+            placeholder={"Last Name"}
+          />
+
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={{
