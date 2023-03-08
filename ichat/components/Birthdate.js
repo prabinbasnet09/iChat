@@ -74,6 +74,7 @@ const EnterBirthDate = ({ navigation }) => {
                 borderRadius: 50,
               }}
               keyboardType="numeric"
+              maxLength={2}
               placeholder={"MONTH"}
               placeholderTextColor="#fff"
               color="#fff"
@@ -93,6 +94,8 @@ const EnterBirthDate = ({ navigation }) => {
                 height: 95,
                 borderRadius: 50,
               }}
+              keyboardType="numeric"
+              maxLength={2}
               placeholder={"DAY"}
               placeholderTextColor="#fff"
               color="#fff"
@@ -112,6 +115,8 @@ const EnterBirthDate = ({ navigation }) => {
                 borderRadius: 50,
               }}
               placeholder={"YEAR"}
+              keyboardType="numeric"
+              maxLength={4}
               placeholderTextColor="#fff"
               color="#fff"
             />

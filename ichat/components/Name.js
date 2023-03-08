@@ -36,7 +36,7 @@ const EnterName = ({ navigation }) => {
               backgroundColor: "#fff",
               color: "#000",
               borderRadius: 50,
-              width: 850,
+              width: '85%',
               marginHorizontal: 30,
               fontSize: 15,
               
@@ -51,7 +51,7 @@ const EnterName = ({ navigation }) => {
               backgroundColor: "#fff",
               color: "#000",
               borderRadius: 50,
-              width: 850,
+              width: '85%',
               marginHorizontal: 30,
               fontSize: 15,
             }}
