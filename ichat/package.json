@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
+    "@fortawesome/fontawesome-free": "^6.3.0",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
     "expo": "~48.0.4",
+    "expo-image-picker": "^14.1.1",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

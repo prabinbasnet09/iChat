@@ -23,11 +23,11 @@ const EnterName = ({ navigation }) => {
               fontWeight: "900",
               color: "#fff",
               marginLeft: 30,
-              marginTop: 60,
+              marginTop: 100,
               marginBottom: 40,
             }}
           >
-            Let's Start{"\n"}With Your{"\n"}Basic Information...
+            Let's Start{"\n"}With Your{"\n"}Name
           </Text>
           <TextInput
             style={{

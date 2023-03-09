@@ -67,13 +67,26 @@ const EnterEmail = ({ navigation }) => {
             marginTop: 60
           }}
         >
-          {/*<Icon name="rightcircle" size={50} color="#000" />*/}
+          {/* <Icon name="rightcircle" size={50} color="#000" />
           <Button title="Next" onPress={handleNextPress} 
           style={{
             backgroundColor: 'black',
             color: "#000",
           }}
-          />
+          /> */}
+        </TouchableOpacity>
+
+        <TouchableOpacity
+            onPress={() => navigation.navigate("FourPhotos")}
+            style={{
+              position: "absolute",
+              right: 30,
+              bottom: 30,
+              backgroundColor: "#fff",
+              borderRadius: 50,
+            }}
+          >
+            <Icon name="rightcircle" size={50} color="#000" />
         </TouchableOpacity>
 
         <Text
@@ -83,21 +96,23 @@ const EnterEmail = ({ navigation }) => {
             fontWeight: "900",
             color: "#fff",
             marginLeft: 30,
-            marginTop: 60,
+            marginTop: 100,
           }}
         >
           WHATS'S YOUR{"\n"}EMAIL ADDRESS?
         </Text>
 
         <Text style={{
-          fontSize: 10,
+          fontSize: 12,
+          fontWeight: 'bold',
           marginLeft: 30,
           marginBottom: 50,
-          backgroundColor: '#808080', // set the background color to light blue
-          padding: 10, // add some padding to the text
-          borderRadius: 5, // add border radius to the text
-          borderWidth: 1, // add border width to the text
-          borderColor: '#000', // set border color to black
+          color: '#fff',
+          // backgroundColor: '#808080', // set the background color to light blue
+          // padding: 10, // add some padding to the text
+          // borderRadius: 5, // add border radius to the text
+          // borderWidth: 1, // add border width to the text
+          // borderColor: '#000', // set border color to black
           width : '50%'
           }}>
             We use this to recover your account.

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Image, ImageBackground, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -6,11 +6,14 @@ import Icon from "react-native-vector-icons/AntDesign";
 import EnterHeight from './components/Height';
 import EnterName from "./components/Name";
 import EnterEmail from "./components/Email";
+import FourPhotos from "./components/FourPhotos";
 import EnterBirthDate from "./components/Birthdate";
+import * as Font from "expo-font";
+
 
 const Stack = createStackNavigator();
 
-const AppButton = ({ onPress, title, backgroundColor, textColor }) => (
+export const AppButton = ({ onPress, title, backgroundColor, textColor }) => (
   <TouchableOpacity
     onPress={onPress}
     style={{
@@ -143,12 +146,27 @@ const HomeScreen = ({ navigation }) => {
 
 
 const App = () => {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        "Helvetica": require("./assets/Helvetica-Font/Helvetica.ttf"),
+      });
+      setFontsLoaded(true);
+    }
+  
+    loadFonts();
+  }, []);
+  
+  if(!fontsLoaded) return (<View></View>)
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="enterName" component={EnterName} />
         <Stack.Screen name="enterEmail" component={EnterEmail} />
+        <Stack.Screen name="FourPhotos" component={FourPhotos} />
         <Stack.Screen name="enterBirthdate" component={EnterBirthDate} />
         <Stack.Screen name="enterHeight" component={EnterHeight} />
       </Stack.Navigator>
