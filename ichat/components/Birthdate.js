@@ -1,8 +1,10 @@
 import React from 'react';
 import {ImageBackground, TouchableOpacity, Text, TextInput, View, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import PreviousScreen from './Back';
 
 const EnterBirthDate = ({ navigation }) => {
+
     return (
       <ImageBackground
         //source={require("./assets/birthdate.jpg")}
@@ -17,6 +19,8 @@ const EnterBirthDate = ({ navigation }) => {
             // alignItems: "center",
           }}
         >
+        
+          {/* <PreviousScreen navigator={handleBack}/> */}
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={{
@@ -26,10 +30,10 @@ const EnterBirthDate = ({ navigation }) => {
             }}
           >
             <Icon name="left" size={30} color="#000" />
-          </TouchableOpacity>
+        </TouchableOpacity> 
   
           <TouchableOpacity
-            onPress={() => navigation.navigate("enterHeight")}
+            onPress={() => navigation.navigate("FourPhotos")}
             style={{
               position: "absolute",
               right: 30,
@@ -47,7 +51,7 @@ const EnterBirthDate = ({ navigation }) => {
               fontWeight: "900",
               color: "#000",
               marginLeft: 30,
-              marginTop: 60,
+              marginTop: 120,
             }}
           >
             WHEN'S YOUR{"\n"}BIRTHDAY?

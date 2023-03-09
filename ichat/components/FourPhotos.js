@@ -3,7 +3,6 @@ import { View, ImageBackground, TouchableOpacity, Text, Image, StyleSheet, Butto
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import * as ImagePicker from 'expo-image-picker';
-import { AppButton } from '../App';
 
 function AddFacebookButton({ label, onPress}) {
     return (
@@ -48,12 +47,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
+      gap: 10,
       justifyContent: 'center',
+      marginBottom: 250
     },
     image: {
       width: 200,
       height: 200,
-      marginTop: 20,
     },
   });
 
@@ -68,7 +68,7 @@ const FourPhotos = ({ navigation }) => {
             quality: 1,
         });
 
-        if(!result.cancelled) {
+        if(!result.canceled) {
             setImage(result.uri);
         }
     };
@@ -80,7 +80,70 @@ const FourPhotos = ({ navigation }) => {
         >
             
             <View style={styles.container}>
-                <Button title="Pick an image from camera roll" onPress={pickImage} />
+                <TouchableOpacity 
+                        style={{
+                            backgroundColor: "white",
+                            borderRadius: 50,
+                            width: 100,
+                            height: 100,
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}
+                        onPress={pickImage} 
+                    >
+                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
+                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity 
+                    style={{
+                        backgroundColor: "white",
+                        borderRadius: 50,
+                        width: 100,
+                        height: 100,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                    onPress={pickImage} 
+                >
+                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
+                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                    style={{
+                        backgroundColor: "white",
+                        borderRadius: 50,
+                        width: 100,
+                        height: 100,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                    onPress={pickImage} 
+                >
+                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
+                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                    style={{
+                        backgroundColor: "white",
+                        borderRadius: 50,
+                        width: 100,
+                        height: 100,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                    onPress={pickImage} 
+                >
+                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
+                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
+                </TouchableOpacity>
+
                 {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
             </View>
 
@@ -96,6 +159,18 @@ const FourPhotos = ({ navigation }) => {
             >
                 <AntDesign name="rightcircle" size={50} color="#000" />
             </TouchableOpacity>
+
+            <TouchableOpacity
+                onPress={() => navigation.goBack()}
+                style={{
+                position: "absolute",
+                left: 10,
+                top: 60,
+                
+                }}
+            >
+                <AntDesign name="left" size={30} color="#000" />
+            </TouchableOpacity> 
             
             <View
                 style={{    flex: 1, 
@@ -105,7 +180,7 @@ const FourPhotos = ({ navigation }) => {
                             bottom: 250,
                             left: 30,
                              }}>
-                <AddFacebookButton label="Add From Facebook" onPress={() => navigation.navigate("FourPhotos")} />
+                <AddFacebookButton label="Add From Facebook" />
             </View>
 
             <View style={{

@@ -51,7 +51,7 @@ const EnterEmail = ({ navigation }) => {
           <Icon name="left" size={30} color="#000" />
         </TouchableOpacity>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => navigation.navigate("enterBirthdate")}
           style={{
             position: "absolute",
@@ -66,7 +66,7 @@ const EnterEmail = ({ navigation }) => {
             marginLeft: 30,
             marginTop: 60
           }}
-        >
+        > */}
           {/* <Icon name="rightcircle" size={50} color="#000" />
           <Button title="Next" onPress={handleNextPress} 
           style={{
@@ -74,10 +74,10 @@ const EnterEmail = ({ navigation }) => {
             color: "#000",
           }}
           /> */}
-        </TouchableOpacity>
+        {/* </TouchableOpacity> */}
 
         <TouchableOpacity
-            onPress={() => navigation.navigate("FourPhotos")}
+            onPress={() => navigation.navigate("enterBirthdate")}
             style={{
               position: "absolute",
               right: 30,

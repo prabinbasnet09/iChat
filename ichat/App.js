@@ -3,7 +3,6 @@ import { View, Text, Image, ImageBackground, TouchableOpacity } from "react-nati
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/AntDesign";
-import EnterHeight from './components/Height';
 import EnterName from "./components/Name";
 import EnterEmail from "./components/Email";
 import FourPhotos from "./components/FourPhotos";
@@ -166,9 +165,8 @@ const App = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="enterName" component={EnterName} />
         <Stack.Screen name="enterEmail" component={EnterEmail} />
-        <Stack.Screen name="FourPhotos" component={FourPhotos} />
         <Stack.Screen name="enterBirthdate" component={EnterBirthDate} />
-        <Stack.Screen name="enterHeight" component={EnterHeight} />
+        <Stack.Screen name="FourPhotos" component={FourPhotos} />
       </Stack.Navigator>
     </NavigationContainer>
   );
