@@ -58,19 +58,31 @@ const styles = StyleSheet.create({
   });
 
 const FourPhotos = ({ navigation }) => {
-    const [image, setImage] = useState(null);
+    const [images, setImages] = useState([
+        {id: 0, image: null},
+        {id: 1, image: null},
+        {id: 2, image: null},
+        {id: 3, image: null},
+    ]);
 
-    const pickImage = async () => {
-        let result  = await ImagePicker.launchImageLibraryAsync({
+    const pickImage = async (index) => {
+        
+        await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
             aspect: [4, 3],
             quality: 1,
-        });
-
-        if(!result.canceled) {
-            setImage(result.uri);
+        }).then((result) => {
+            if(result && !result.canceled){
+            setImages((prevImages) => {
+                    const newImages = [...prevImages];
+                    newImages[index].image = result.assets[0].uri;
+                    return newImages;
+            })};
+        }).catch((error) => {
+            console.log(error);
         }
+        );
     };
 
     return (
@@ -78,73 +90,34 @@ const FourPhotos = ({ navigation }) => {
             source={require('../assets/fourPhotos.jpg')}
             style={{ width: '100%', height: '100%' }}
         >
-            
+        
             <View style={styles.container}>
-                <TouchableOpacity 
-                        style={{
-                            backgroundColor: "white",
-                            borderRadius: 50,
-                            width: 100,
-                            height: 100,
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}
-                        onPress={pickImage} 
-                    >
-                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
-                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
-                </TouchableOpacity>
-                
-                <TouchableOpacity 
-                    style={{
-                        backgroundColor: "white",
-                        borderRadius: 50,
-                        width: 100,
-                        height: 100,
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
-                    onPress={pickImage} 
-                >
-                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
-                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity 
-                    style={{
-                        backgroundColor: "white",
-                        borderRadius: 50,
-                        width: 100,
-                        height: 100,
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
-                    onPress={pickImage} 
-                >
-                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
-                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity 
-                    style={{
-                        backgroundColor: "white",
-                        borderRadius: 50,
-                        width: 100,
-                        height: 100,
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
-                    onPress={pickImage} 
-                >
-                    {/* <AntDesign name="pluscircle" size={100} color="#fff"/> */}
-                    <Text style={{color: "gray", fontSize: 30}}>+</Text>
-                </TouchableOpacity>
-
-                {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+                {
+                    images.map((image, index) => {
+                    return (
+                        <TouchableOpacity
+                            key={index}
+                            style={{
+                                backgroundColor: "white",
+                                borderRadius: 50,
+                                width: 100,
+                                height: 100,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                            onPress={() => {pickImage(index)}}
+                        >
+                            {image.image ? 
+                                <Image source={{ uri: image.image }} 
+                                style={{ width: 100, height: 100, borderRadius: 50}} 
+                                /> :
+                                <Text style={{color: "gray", fontSize: 30}}>+</Text>
+                            }
+                        </TouchableOpacity>
+                    )
+                    })
+                }
             </View>
 
             <TouchableOpacity
