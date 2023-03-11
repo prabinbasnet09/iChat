@@ -3,10 +3,10 @@ import { View, Text, Image, ImageBackground, TouchableOpacity } from "react-nati
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/AntDesign";
-import EnterName from "./components/Name";
-import EnterEmail from "./components/Email";
-import FourPhotos from "./components/FourPhotos";
-import EnterBirthDate from "./components/Birthdate";
+import EnterName from "./pages/Name";
+import EnterEmail from "./pages/Email";
+import FourPhotos from "./pages/FourPhotos";
+import EnterBirthDate from "./pages/Birthdate";
 import * as Font from "expo-font";
 
 
