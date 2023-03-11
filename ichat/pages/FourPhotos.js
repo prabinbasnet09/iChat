@@ -121,7 +121,7 @@ const FourPhotos = ({ navigation }) => {
             </View>
 
             <TouchableOpacity
-                onPress={() => navigation.navigate("FourPhotos")}
+                onPress={() => navigation.navigate("ViewProfile")}
                 style={{
                 position: "absolute",
                 right: 30,

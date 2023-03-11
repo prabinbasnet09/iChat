@@ -5,8 +5,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/AntDesign";
 import EnterName from "./pages/Name";
 import EnterEmail from "./pages/Email";
-import FourPhotos from "./pages/FourPhotos";
 import EnterBirthDate from "./pages/Birthdate";
+import FourPhotos from "./pages/FourPhotos";
+import ViewProfile from "./pages/ViewProfile";
 import * as Font from "expo-font";
 
 
@@ -167,6 +168,7 @@ const App = () => {
         <Stack.Screen name="enterEmail" component={EnterEmail} />
         <Stack.Screen name="enterBirthdate" component={EnterBirthDate} />
         <Stack.Screen name="FourPhotos" component={FourPhotos} />
+        <Stack.Screen name="ViewProfile" component={ViewProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
