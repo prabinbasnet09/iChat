@@ -7,7 +7,7 @@ import {
   ScrollView,
   ImageBackground,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+// import { LinearGradient } from "expo-linear-gradient";
 
 const PublicProfile = () => {
   return (
@@ -47,14 +47,13 @@ const PublicProfile = () => {
         </View>
       </ImageBackground>
 
-      <LinearGradient
+      {/* <LinearGradient
         colors={["#ffffff", "#000000"]}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 0 }}
         style={styles.gradient}
       >
-        {/* Your content goes here */}
-      </LinearGradient>
+      </LinearGradient> */}
     </View>
   );
 };

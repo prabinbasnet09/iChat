@@ -27,7 +27,7 @@ const EnterName = ({ navigation }) => {
               marginBottom: 40,
             }}
           >
-            Let's Start{"\n"}With Your{"\n"}Name
+            Let's Start With Your Name
           </Text>
           <TextInput
             style={{

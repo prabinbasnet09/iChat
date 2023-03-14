@@ -24,19 +24,14 @@ const ViewProfile = ({ navigation }) => {
           marginTop: 100,
         }}
       >
-        ARE YOU READY TO VIEW YOUR
-      </Text>
-      <Text
+        ARE YOU READY TO VIEW YOUR {'\t'}
+        <Text
         style={{
-          textAlign: "left",
-          fontSize: 35,
-          fontWeight: "900",
           color: "#efa006",
-          marginLeft: 30,
-          marginTop: 10,
         }}
       >
         PROFILE?
+      </Text>
       </Text>
 
       <View
@@ -58,7 +53,7 @@ const ViewProfile = ({ navigation }) => {
           Yes, take me away!
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("ViewProfile")}
+          onPress={() => navigation.navigate("PublicProfile")}
           style={{
             backgroundColor: "#23c0c0",
             borderRadius: 50,
