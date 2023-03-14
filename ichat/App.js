@@ -8,6 +8,7 @@ import EnterEmail from "./pages/Email";
 import EnterBirthDate from "./pages/Birthdate";
 import FourPhotos from "./pages/FourPhotos";
 import ViewProfile from "./pages/ViewProfile";
+import UserProfile from "./pages/UserProfile";
 import * as Font from "expo-font";
 
 
@@ -169,6 +170,8 @@ const App = () => {
         <Stack.Screen name="enterBirthdate" component={EnterBirthDate} />
         <Stack.Screen name="FourPhotos" component={FourPhotos} />
         <Stack.Screen name="ViewProfile" component={ViewProfile} />
+        <Stack.Screen name="UserProfile" component={UserProfile} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
