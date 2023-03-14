@@ -51,7 +51,7 @@ const ViewProfile = ({ navigation }) => {
                 Yes, take me away!
             </Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate("ViewProfile")}
+                onPress={() => navigation.navigate("UserProfile")}
                 style={{
                 backgroundColor: "#23c0c0",
                 borderRadius: 50,
