@@ -37,7 +37,7 @@ const ViewProfile = ({ navigation }) => {
                 style={{
                 position: "absolute",
                 right: 30,
-                bottom: 30,
+                bottom: 80,
                 flexDirection: "row",
             }}>
             <Text
@@ -51,7 +51,7 @@ const ViewProfile = ({ navigation }) => {
                 Yes, take me away!
             </Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate("UserProfile")}
+                onPress={() => navigation.navigate("ViewProfile")}
                 style={{
                 backgroundColor: "#23c0c0",
                 borderRadius: 50,
@@ -59,6 +59,35 @@ const ViewProfile = ({ navigation }) => {
             >   
                 <AntDesign name="rightcircle" size={50} color="white" />
             </TouchableOpacity>
+            </View>
+
+            <View
+                style={{
+                    position: "absolute",
+                    right: 30,
+                    bottom: 20,
+                    flexDirection: "row"
+             }}>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate("FourPhotos")}
+                    style={{
+                    backgroundColor: "red",
+                    borderRadius: 50,
+                    }}
+                >   
+                    <AntDesign name="leftcircle" size={50} color="white" />
+                </TouchableOpacity>
+                <Text
+                    style={{
+                        bottom: -10,
+                        paddingRight: 10,
+                        paddingLeft: 10,
+                        fontSize: 20,
+                        color: "#fff",
+                    }}
+                >
+                    No, take me back!
+                </Text>
             </View>
 
         </ImageBackground>
