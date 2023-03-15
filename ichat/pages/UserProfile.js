@@ -25,7 +25,7 @@ const UserProfile = (props) => {
                 <TouchableOpacity onPress={props.onPress}>
                   <View
                     style={{
-                    marginLeft: '60%', marginTop: '2.5%',
+                    marginLeft: '30%', marginTop: 50,
                     width: 200,
                     borderWidth: 2,
                     borderColor: 'transparent',
@@ -47,22 +47,22 @@ const UserProfile = (props) => {
                 </TouchableOpacity>
 
             <TouchableOpacity style={[styles.settting, {fontWeight: 'bold', fontSize: 18, marginRight: 250, marginTop: '-8.5%'}]}>
-            <Text style={[styles.settting, {color:'white', fontSize: 14, marginRight: 250, marginTop: '-8.5%'}]}>
-              ACCOUNT SETTINGS <Icon name="cog" size={20} color="#4267B2" borderRadius='100%' marginTop={5} marginLeft={8} />   
+            <Text style={[styles.settting, {color:'white', fontSize: 8, marginRight: 5, marginTop: '-30.5%'}]}>
+            <Icon name="cog" size={20} color="#4267B2" borderRadius='100%' marginTop={-1} marginLeft={8} />   
             </Text>
             </TouchableOpacity>
             </View>
 
             <Text style ={styles.name}> Susie C. Little</Text>
             <Text style ={styles.subName}> Las Vegas, United States</Text>
-
+            
             <View style = {styles.buttonContainer}>
               <TouchableOpacity onPress={onPress} style = {styles.button1}>
-              <Text style = {{color:'#eee', padding:5, fontWeight :'bold'}}> PHOTOS </Text>
+              <Text style = {{color:'#eee', padding:1, fontWeight :'bold', fontSize: 12}}> PHOTOS </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={onPress} style = {styles.button2}>
-              <Text style = {{color:'#eee', padding:5, fontWeight :'bold'}}> CIRCLE OF FRIENDS </Text>
+              <Text style = {{color:'#eee', padding:1, fontWeight :'bold', fontSize: 12}}> CIRCLE OF FRIENDS </Text>
               </TouchableOpacity>
             </View> 
 
@@ -89,7 +89,7 @@ const UserProfile = (props) => {
 
             <View>
             <TouchableOpacity onPress={onPress} style = {styles.button3}>
-              <Text style = {{color:'#eee', padding:5, fontWeight :'bold'}}> ABOUT ME </Text>
+              <Text style = {{fontSize:12, color:'#eee', fontWeight :'bold'}}> ABOUT ME </Text>
             </TouchableOpacity>
             </View>
 
@@ -99,7 +99,7 @@ const UserProfile = (props) => {
             numberOfLines= {4}>
              Hi this is me, Susie C. Little. {"\n"}
              I live in Las Vegas, Nevada. I go to Vegas Junior School. {"\n"}
-             Welcome to iChat. This is my profile. I love to take pictures. {"\n"}
+             Welcome to iChat. This is my profile.{"\n"}
              More..
             </TextInput>
 
@@ -109,23 +109,24 @@ const UserProfile = (props) => {
             <View style={[styles.statusPost,{borderBottomColor: '#D3D3D3',}]}>
             <View style={{position: 'absolute', bottom: 0, left: 0, right: 0, height: 2,}} />
             <TextInput 
-              style={[styles.status, {paddingBottom: 15, borderBottomColor: 'white', borderBottomWidth: 0.4, width: '95%',}]} 
+              style={[styles.status, {marginTop: 50, marginBottom:2, height:30, paddingBottom: 5, borderBottomColor: 'white', borderBottomWidth: 0.4, width: '92%',}]} 
               multiline={true} 
               numberOfLines={1} 
               placeholder="SAY SOMETHING.."
-              placeholderTextColor={'#00CDFE'} />
+              placeholderTextColor={'#00CDFE'}
+               />
 
               <View style={[styles.shareOption, {flexDirection:'row'}]}>
-                <Text style={[styles.share, {marginLeft: '85%', marginTop: 10, fontWeight: 'bold'}]}>
+                <Text style={[styles.share, {fontSize:12, marginLeft: '65%', marginTop: 5, fontWeight: 'bold'}]}>
                   SHARE TO: 
                 </Text>
 
                 <TouchableOpacity style={[styles.socialMedia1, {}]}>             
-                  <Icon name="facebook-square" size={20} color="#4267B2" borderRadius='100%' marginTop={5} marginLeft={8} />   
+                  <Icon name="facebook-square" size={18} color="#4267B2" borderRadius='100%' marginTop={3} marginLeft={8} />   
                 </TouchableOpacity>
 
                 <TouchableOpacity style={[styles.socialMedia2, {}]}>             
-                  <Icon name="twitter-square" size={20} color="#1DA1F2" borderRadius='100%' marginTop={5} marginLeft={8} />                         
+                  <Icon name="twitter-square" size={18} color="#1DA1F2" borderRadius='100%' marginTop={3} marginLeft={8} />                         
                 </TouchableOpacity>
 
               </View>
@@ -149,23 +150,25 @@ const UserProfile = (props) => {
             
             <View style = {styles.buttonOptions}>
             <TouchableOpacity onPress={onPress} style = {styles.lastButton1}>
-              <Text style = {{color:'#00CDFE', paddingBottom:15, fontWeight :'bold', textAlign: 'center',}}> FRIENDS </Text>
+              <Text style = {{fontSize:12, color:'#00CDFE', paddingTop:3, fontWeight :'bold', textAlign: 'center',}}> FRIENDS </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={onPress} style = {styles.lastButton2}>
-              <Text style = {{color:'#00CDFE', paddingBottom:15, fontWeight :'bold', textAlign: 'center', }}> LIFELINE </Text>
+              <Text style = {{fontSize:12, color:'#00CDFE', paddingTop:3, fontWeight :'bold', textAlign: 'center', }}> LIFELINE </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={onPress} style = {styles.lastButton3}>
-              <Text style = {{color:'#00CDFE', paddingBottom:10, fontWeight :'bold', textAlign: 'center'}}> CLUBS </Text>
+              <Text style = {{fontSize:12, color:'#00CDFE', paddingTop:3, fontWeight :'bold', textAlign: 'center'}}> CLUBS </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={onPress} style = {styles.lastButton4}>
-              <Text style = {{color:'#00CDFE', paddingBottom:15, fontWeight :'bold', textAlign: 'center'}}> HUDDLE </Text>
+              <Text style = {{fontSize:12, color:'#00CDFE', paddingTop:3, fontWeight :'bold', textAlign: 'center'}}> HUDDLE </Text>
               </TouchableOpacity>
             </View>  
 
+              <View style = {[styles.upperContainer, {height: 250}]}>
               <Text style = {styles.insideText}>Hi this is another block. I don't know what is the purpose of it. {'\n'}Anyways it is here. </Text>
+              </View>
             </View> 
               
             <View style = {styles.iconContain}>
@@ -177,7 +180,7 @@ const UserProfile = (props) => {
             </View>
 
               <Text style = {styles.secondLine}>
-                  Hi this is a second line. {'\n'}
+                  {'\n'}Hi this is a second line. {'\n'}
                   I again do not know the purpose of it. {'\n'}
                   Still I would like to thank you all. 
               </Text>
@@ -193,30 +196,31 @@ const UserProfile = (props) => {
 const styles = StyleSheet.create({
   name: {
     marginTop: 10,
-    marginLeft: '41%',
-    fontSize: 50,
+    marginLeft: '35%',
+    fontSize: 22,
     color: 'white'
   },
 
   subName: {
     marginTop: 10,
-    marginLeft: '45%',
+    marginLeft: '32%',
     fontSize: 15,
     color: 'white'
   },
 
 buttonContainer: {
 flexDirection: 'row',
+marginTop: 25,
 },
 
   button1: {
-    marginLeft: 25,
+    marginLeft: 15,
     backgroundColor: '#D2042D',
     borderTopEndRadius: 15,
     padding: 10,
     alignContent: 'center',
     width: 90,
-    height: 50,
+    height: 35,
     
   },
 
@@ -226,18 +230,18 @@ flexDirection: 'row',
     borderTopEndRadius: 15,
     padding: 10,
     alignContent: 'center',
-    width: 180,
-    height: 50,
+    width: 150,
+    height: 35,
   },
 
   button3: {
-    marginLeft: 25,
+    marginLeft: 15,
     backgroundColor: '#363646',
     borderTopEndRadius: 15,
     padding: 10,
     alignContent: 'center',
-    width: 150,
-    height: 50,
+    width: 110,
+    height: 35,
   },
 
   container: {
@@ -253,29 +257,29 @@ flexDirection: 'row',
   },
 
   photos: {
-    height: 625,
-    marginLeft: 15,
+    height: 425,
+    marginLeft: 10,
 
   },
 
   image : {
-    height :600,
+    height :400,
     resizeMode: 'cover',
     borderTopLeftRadius: 0,
     borderRadius: 20,
-    width: '90%',
-    resizeMode: 'stretch',
+    width: '95%',
+    resizeMode: 'cover',
   },
 
   aboutMeContainer: {
     //height: '50%',
-    width: '90%',
+    width: '95%',
     borderWidth: 1,
     borderColor: '#ccc',
     //borderRadius: ,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    marginLeft: 15,
+    marginLeft: 10,
     borderRadius: 10,
  
     backgroundColor: 'white',
@@ -292,12 +296,13 @@ flexDirection: 'row',
 
   statusPost:{
     //position: 'absolute',
-    height:130,
+    height:105,
     backgroundColor: '#363646',
-    marginLeft: 15,
+    marginLeft: 10,
     borderRadius: 15,
     marginBottom: 15,
-    width: '90%',    
+    paddingBottom: 35,
+    width: '95%',    
   },
 
   status: {
@@ -310,19 +315,19 @@ flexDirection: 'row',
 
   mainDiv:{
     position: 'relative',
-    height: 230,
-    width: '90%',
+    height: 270,
+    width: '95%',
     backgroundColor: '#D2042D',
     borderRadius: 10,
-    marginLeft: 15,
+    marginLeft: 10,
     marginBottom: 20,
   },
 
   insideDiv: {
     position: 'absolute',
-    top: '20%',
+    top: '13%',
     backgroundColor: '#610C04',
-    height: 90,
+    height: 110,
     width: '100%',
     
   },
@@ -333,54 +338,55 @@ flexDirection: 'row',
   },
 
   lastButton1: {
-    marginTop: -25,
-    marginLeft: 95,
+    marginTop: -20,
+    marginLeft: 9,
     backgroundColor: 'white',
     //borderRadius: 10,
     padding: 10,
     alignContent: 'center',
-    width: 180,
-    height: 40,
+    width: 80,
+    height: 35,
     borderRadius: 15,
   },
 
   lastButton2: {
-    marginTop: -25,
-    marginLeft: 105,
+    marginTop: -20,
+    marginLeft: 5,
     backgroundColor: 'white',
     //borderRadius: 10,
     padding: 10,
     alignContent: 'center',
-    width: 180,
-    height: 40,
+    width: 80,
+    height: 35,
     borderRadius: 15,
   },
 
   lastButton3: {
-    marginTop: -25,
-    marginLeft: 105,
+    marginTop: -20,
+    marginLeft: 5,
     backgroundColor: 'white',
     //borderRadius: 10,
     padding: 10,
     alignContent: 'center',
-    width: 180,
-    height: 40,
+    width: 80,
+    height: 35,
     borderRadius: 15,
   },
 
   lastButton4: {
-    marginTop: -25,
-    marginLeft: 105,
+    marginTop: -20,
+    marginLeft: 5,
     backgroundColor: 'white',
     //borderRadius: 10,
     padding: 10,
     alignContent: 'center',
-    width: 180,
-    height: 40,
+    width: 80,
+    height: 35,
     borderRadius: 15,
   },
 
   insideText : {
+    height: 150,
     paddingTop : 15,
     textAlign: 'center',    
     color: '#FFFFFF',
@@ -407,8 +413,8 @@ flexDirection: 'row',
     height: 10,
     width: 5,
     position: 'absolute',
-    marginLeft: "50%",
-    marginTop: '10%',
+    marginLeft: "45%",
+    marginTop: '37%',
     borderRadius: '100%',
     alignContent: 'center',
   },
