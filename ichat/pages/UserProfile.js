@@ -167,7 +167,7 @@ const UserProfile = (props) => {
             </View>  
 
               <View style = {[styles.upperContainer, {height: 250}]}>
-              <Text style = {styles.insideText}>Hi this is another block. I don't know what is the purpose of it. {'\n'}Anyways it is here. </Text>
+              <Text style = {styles.insideText}>Hi this is another block. The note icon below indicates you can edit it. {'\n'}Let's enjoy this app. </Text>
               </View>
             </View> 
               
@@ -180,9 +180,9 @@ const UserProfile = (props) => {
             </View>
 
               <Text style = {styles.secondLine}>
-                  {'\n'}Hi this is a second line. {'\n'}
-                  I again do not know the purpose of it. {'\n'}
-                  Still I would like to thank you all. 
+                  {'\n'}Hi you can edit friend list. {'\n'}
+                  You can also view your status. {'\n'}
+                  Oops!! There are more features.  
               </Text>
           </View>
 
@@ -390,11 +390,12 @@ marginTop: 25,
     paddingTop : 15,
     textAlign: 'center',    
     color: '#FFFFFF',
+    padding: 5,
 
   },
 
   secondLine : {
-    paddingTop : 15,
+    padding : 15,
     textAlign: 'center', 
     paddingTop: 160,
     color: '#FFFFFF',

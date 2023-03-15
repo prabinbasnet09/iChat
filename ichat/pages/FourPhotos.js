@@ -113,13 +113,14 @@ const FourPhotos = ({ navigation }) => {
             <TouchableOpacity
               key={index}
               style={{
-                backgroundColor: "white",
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
                 borderRadius: 50,
                 width: 100,
                 height: 100,
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
+                
               }}
               onPress={() => {
                 pickImage(index);
