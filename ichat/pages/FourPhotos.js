@@ -11,6 +11,8 @@ import {
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import * as ImagePicker from "expo-image-picker";
+import { useSelector, useDispatch } from "react-redux";
+import { setPhotos } from "../store";
 
 function AddFacebookButton({ label, onPress }) {
   return (
@@ -74,12 +76,8 @@ const styles = StyleSheet.create({
 });
 
 const FourPhotos = ({ navigation }) => {
-  const [images, setImages] = useState([
-    { id: 0, image: null },
-    { id: 1, image: null },
-    { id: 2, image: null },
-    { id: 3, image: null },
-  ]);
+  const dispatch = useDispatch();
+  const [images, setImages] = useState(useSelector((state) => state.user.photos));
 
   const pickImage = async (index) => {
     await ImagePicker.launchImageLibraryAsync({
@@ -93,6 +91,7 @@ const FourPhotos = ({ navigation }) => {
           setImages((prevImages) => {
             const newImages = [...prevImages];
             newImages[index].image = result.assets[0].uri;
+            console.log(result.assets[0].uri);
             return newImages;
           });
         }
@@ -140,7 +139,10 @@ const FourPhotos = ({ navigation }) => {
       </View>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("ViewProfile")}
+        onPress={() => {
+          navigation.navigate("ViewProfile")
+          dispatch(setPhotos(images));
+        }}
         style={{
           position: "absolute",
           right: 30,

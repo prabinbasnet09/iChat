@@ -8,9 +8,14 @@ import {
   Button, Alert
 } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
+import { useSelector, useDispatch } from "react-redux";
+import { setRecoveryEmail } from "../store";
 
 const EnterEmail = ({ navigation }) => {
-  const [email, setEmail] = useState("");
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState(user.recoveryEmail);
+
   const handleEmailChange = (text) => {
     setEmail(text);
   };
@@ -77,7 +82,10 @@ const EnterEmail = ({ navigation }) => {
         {/* </TouchableOpacity> */}
 
         <TouchableOpacity
-            onPress={() => navigation.navigate("enterBirthdate")}
+            onPress={() => {
+              navigation.navigate("enterBirthdate")
+              dispatch(setRecoveryEmail(email));
+            }}
             style={{
               position: "absolute",
               right: 30,

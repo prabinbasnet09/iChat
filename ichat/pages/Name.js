@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {ImageBackground, Text, TextInput, TouchableOpacity, SafeAreaView, View} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-
+import { useSelector, useDispatch} from 'react-redux';
+import { setFirstName, setLastName } from '../store';
 
 const EnterName = ({ navigation }) => {
+  const user = useSelector(state => state.user);
+  const [startName, setStartName] = useState(user.firstName);
+  const [surname, setSurname] = useState(user.lastName);
+  const dispatch = useDispatch();
+
+  const handleFirstName = (text) => {
+    setStartName(text);
+  };
+
+  const handleLastName = (text) => {
+    setSurname(text);
+  };
+
     return (
       <ImageBackground
         source={require("../assets/detailpage.jpg")}
@@ -41,7 +55,9 @@ const EnterName = ({ navigation }) => {
               fontSize: 15,
               
             }}
+            value={startName}
             placeholder={"First Name"}
+            onChangeText={handleFirstName}
           />
           <View style={{ height: 20 }} />
           <TextInput
@@ -55,7 +71,9 @@ const EnterName = ({ navigation }) => {
               marginHorizontal: 30,
               fontSize: 15,
             }}
+            value={surname}
             placeholder={"Last Name"}
+            onChangeText={handleLastName}
           />
 
           <TouchableOpacity
@@ -70,7 +88,11 @@ const EnterName = ({ navigation }) => {
           </TouchableOpacity>
   
           <TouchableOpacity
-            onPress={() => navigation.navigate("enterEmail")}
+            onPress={() => {
+              navigation.navigate("enterEmail");
+              dispatch(setFirstName(startName));
+              dispatch(setLastName(surname));
+            }}
             style={{
               position: "absolute",
               right: 30,

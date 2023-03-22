@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ImageBackground,
   TouchableOpacity,
@@ -9,8 +9,34 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import PreviousScreen from "../components/Back";
+import { useSelector, useDispatch } from "react-redux";
+import { setBirthDate } from "../store";
 
 const EnterBirthDate = ({ navigation }) => {
+  const date = useSelector((state) => state.user.birthDate.split('/'));
+  const [months, setMonths] = useState(date[0]);
+  const [days, setDays] = useState(date[1]);
+  const [years, setYears] = useState(date[2]);
+
+  const dispatch = useDispatch();
+
+  const handleMonth = (text) => {
+    setMonths(text);
+  };
+
+  const handleDay = (text) => {
+    setDays(text);
+  };
+
+  const handleYear = (text) => {
+    setYears(text);
+  };
+
+  const combineDate = () => {
+    dispatch(setBirthDate(`${months}/${days}/${years}`));
+  };
+
+
   return (
     <ImageBackground
       //source={require("./assets/birthdate.jpg")}
@@ -38,7 +64,10 @@ const EnterBirthDate = ({ navigation }) => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("FourPhotos")}
+          onPress={() => {
+            navigation.navigate("FourPhotos")
+            combineDate();
+          }}
           style={{
             position: "absolute",
             right: 30,
@@ -89,6 +118,8 @@ const EnterBirthDate = ({ navigation }) => {
             placeholder={"MONTH"}
             placeholderTextColor="#fff"
             color="#fff"
+            value={months}
+            onChangeText={handleMonth}
           />
           <TextInput
             style={{
@@ -110,6 +141,8 @@ const EnterBirthDate = ({ navigation }) => {
             placeholder={"DAY"}
             placeholderTextColor="#fff"
             color="#fff"
+            value={days}
+            onChangeText={handleDay}
           />
           <TextInput
             style={{
@@ -130,6 +163,8 @@ const EnterBirthDate = ({ navigation }) => {
             maxLength={4}
             placeholderTextColor="#fff"
             color="#fff"
+            value={years}
+            onChangeText={handleYear}
           />
         </View>
       </SafeAreaView>

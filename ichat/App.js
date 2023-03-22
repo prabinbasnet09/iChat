@@ -12,6 +12,8 @@ import UserProfile from "./pages/UserProfile";
 import PublicProfile from "./pages/PublicProfile";
 import * as Font from "expo-font";
 
+import { Provider } from "react-redux";
+import {store} from "./store";
 
 const Stack = createStackNavigator();
 
@@ -163,18 +165,20 @@ const App = () => {
   if(!fontsLoaded) return (<View></View>)
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="enterName" component={EnterName} />
-        <Stack.Screen name="enterEmail" component={EnterEmail} />
-        <Stack.Screen name="enterBirthdate" component={EnterBirthDate} />
-        <Stack.Screen name="FourPhotos" component={FourPhotos} />
-        <Stack.Screen name="ViewProfile" component={ViewProfile} />
-        <Stack.Screen name = "UserProfile" component={UserProfile} />
-        <Stack.Screen name="PublicProfile" component={PublicProfile} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="enterName" component={EnterName} />
+          <Stack.Screen name="enterEmail" component={EnterEmail} />
+          <Stack.Screen name="enterBirthdate" component={EnterBirthDate} />
+          <Stack.Screen name="FourPhotos" component={FourPhotos} />
+          <Stack.Screen name="ViewProfile" component={ViewProfile} />
+          <Stack.Screen name = "UserProfile" component={UserProfile} />
+          <Stack.Screen name="PublicProfile" component={PublicProfile} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

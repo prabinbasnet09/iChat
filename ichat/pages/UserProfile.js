@@ -4,12 +4,14 @@ import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-ha
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useColorScheme } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 
 const UserProfile = (props) => {
  // const [description, setDescription] = useState('');
  const colorScheme = useColorScheme();
  const [theme, setTheme] = useState('light');
-
+const user = useSelector(state => state.user);
+const dispatch = useDispatch();
 
 useEffect(() => {
   if (colorScheme === 'dark') {
@@ -57,7 +59,7 @@ useEffect(() => {
                     height: 200,
                     resizeMode: 'cover',
                     }}
-                      source={require('../assets/viewProfile.png')}
+                      source={{ uri: user.photos[0].image }}
                     />
                   </View>
                 </TouchableOpacity>
@@ -69,7 +71,7 @@ useEffect(() => {
             </TouchableOpacity>
             </View>
 
-            <Text style ={styles.name}> Susie C. Little</Text>
+            <Text style ={styles.name}>{`${user.firstName} ${user.lastName}`}</Text>
             <Text style ={styles.subName}> Las Vegas, United States</Text>
             
             <View style = {styles.buttonContainer}>
@@ -83,7 +85,21 @@ useEffect(() => {
             </View> 
 
             <Swiper style={styles.photos} showsPagination={true}>
-              <View style={styles.slide}>
+              {
+                user.photos.map((image, id) => {
+                  return (
+                    <View key={id} style={styles.slide}>
+                      {
+                        image ? 
+                        <Image source={{ uri: image.image }} style={styles.image} /> :
+                        <Image source={require('../assets/viewProfile.png')} style={styles.image} />
+                      }
+                    </View>
+                  )
+                })
+              }
+
+              {/* <View style={styles.slide}>
                 <Image source={require('../assets/girl1.jpg')} style={styles.image} />
               </View>
               <View style={styles.slide}>
@@ -100,7 +116,7 @@ useEffect(() => {
               </View>
               <View style={styles.slide}>
                 <Image source={require('../assets/boy3.jpg')} style={styles.image} />
-              </View>
+              </View> */}
             </Swiper>
 
             <View>
@@ -422,7 +438,7 @@ marginTop: 25,
     backgroundColor :'gray',
     height: 30,
     width: 35,
-    borderRadius: '100%',
+    borderRadius: 100,
     alignContent: 'center',
   },
 
@@ -432,7 +448,7 @@ marginTop: 25,
     position: 'absolute',
     marginLeft: "45%",
     marginTop: '37%',
-    borderRadius: '100%',
+    borderRadius: 100,
     alignContent: 'center',
   },
 
