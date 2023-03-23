@@ -172,7 +172,7 @@ const FourPhotos = ({ navigation }) => {
           justifyContent: "center",
           position: "absolute",
           bottom: 250,
-          left: 30,
+          left: 15,
         }}
       >
         <AddFacebookButton label="Add From Facebook" />

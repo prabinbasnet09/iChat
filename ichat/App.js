@@ -10,6 +10,7 @@ import FourPhotos from "./pages/FourPhotos";
 import ViewProfile from "./pages/ViewProfile";
 import UserProfile from "./pages/UserProfile";
 import PublicProfile from "./pages/PublicProfile";
+import Entry from "./pages/Entry";
 import * as Font from "expo-font";
 
 import { Provider } from "react-redux";
@@ -49,103 +50,41 @@ export const AppButton = ({ onPress, title, backgroundColor, textColor }) => (
 );
 
 const HomeScreen = ({ navigation }) => {
-  return (
-    <ImageBackground
-      source={require("./assets/home.png")}
-      style={{ width: "100%", height: "102%" }}
-      resizeMode="cover"
-    >
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Image
-          source={require("./assets/logo.png")}
-          style={{ width: 120, height: 120, marginBottom: 50 }}
-        />
-        <Text
-          style={{
-            color: "#fff",
-            fontSize: 30,
-            textAlign: "center",
-            fontWeight: "900",
-            marginBottom: 130,
-            width: 300,
-          }}
-        >
-          THE HOTTEST SOCIAL MEDIA APP FOR CHILDREN {"&"} ADULTS!{" "}
-        </Text>
-        <AppButton
-          title={
-            <>
-              <Icon name="apple1" size={20} color="#fff" />
-              {"  "}
-              continue with apple
-            </>
-          }
-          onPress={() => navigation.navigate("enterName")}
-          backgroundColor={"#000"}
-          textColor={"#fff"}
-        />
-        <AppButton
-          title={
-            <>
-              <Icon name="facebook-square" size={20} color="#fff" />
-              {"  "}
-              continue with facebook
-            </>
-          }
-          onPress={() => navigation.navigate("enterName")}
-          backgroundColor={"#3b5998"}
-          textColor={"#fff"}
-        />
-        <AppButton
-          title={
-            <>
-              <Icon name="google" size={20} color="red" />
-              {"  "}
-              continue with google
-            </>
-          }
-          onPress={() => navigation.navigate("enterName")}
-          backgroundColor={"#fff"}
-          textColor={"#000"}
-        />
-        <AppButton
-          title={
-            <>
-              <Icon name="phone" size={20} color="#000" />
-              {"  "}
-              use cell phone number
-            </>
-          }
-          onPress={() => navigation.navigate("enterName")}
-          backgroundColor={"#fff"}
-          textColor={"#000"}
-        />
+return (
+  <ImageBackground
+  source={require("./assets/OpenImage.jpg")}
+  style={{ width: "100%", height: "102%" }}
+  resizeMode="cover">
+            
+            <View>
+              <Text style = {{fontFamily: "Verdana", color:'#eee', padding:1, fontWeight :'bold', fontSize: 20, marginTop: "30%",
+                              marginLeft: 85, color: "black"}}> 
+              Welcome to iChat {"\n"} 
+              </Text>
+              <Text style = {{fontFamily: "Georgia", color:'white', padding:1, fontSize: 18, marginTop: "-5%",
+                            marginLeft: 105}}>
+              Globalize the world
+              </Text>
+            </View>
 
-        <Text
-          style={{
-            color: "#fff",
-            marginTop: 20,
-            fontSize: 10,
-            paddingHorizontal: 70,
-            textAlign: "center",
-          }}
-        >
-          By signing up, you agree to our Terms. See how we use your data in our
-          Privacy Policy. We never post to Facebook{" "}
-        </Text>
-        <Text
-          style={{
-            color: "#fff",
-            marginTop: 20,
-            fontSize: 10,
-            fontWeight: "bold",
-          }}
-        >
-          Parents Permissions
-        </Text>
-      </View>
-    </ImageBackground>
-  );
+            <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Entry")  
+            }}
+            style={{
+              position: "absolute",
+              right: 30,
+              bottom: 50,
+              backgroundColor: "#fff",
+              borderRadius: 50,
+            }}
+          >
+            <Icon name="rightcircle" size={50} color="#000" />
+        </TouchableOpacity>
+
+      </ImageBackground> 
+)
+
 };
 
 
@@ -176,6 +115,7 @@ const App = () => {
           <Stack.Screen name="ViewProfile" component={ViewProfile} />
           <Stack.Screen name = "UserProfile" component={UserProfile} />
           <Stack.Screen name="PublicProfile" component={PublicProfile} />
+          <Stack.Screen name="Entry" component={Entry} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
@@ -183,3 +123,8 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+  
