@@ -34,11 +34,6 @@ useEffect(() => {
             style={{width: "100%", height: "100%"}}>
 
             <View style={[styles.top, {flexDirection:'row', justifyContent: 'space-between', alignItems: 'center'}]}>  
-                        
-            {/*<TouchableOpacity onPress={props.onPress}>
-            <Image style={{width:200, height: 200, marginLeft: '60%', marginTop: '2.5%', borderRadius: 100, resizeMode: 'cover',}} 
-                   source={ require('../assets/viewProfile.png')} />
-            </TouchableOpacity> */}
 
                 <TouchableOpacity onPress={props.onPress}>
                   <View
@@ -99,24 +94,6 @@ useEffect(() => {
                 })
               }
 
-              {/* <View style={styles.slide}>
-                <Image source={require('../assets/girl1.jpg')} style={styles.image} />
-              </View>
-              <View style={styles.slide}>
-                <Image source={require('../assets/boy1.jpg')} style={styles.image} />
-              </View>
-              <View style={styles.slide}>
-                <Image source={require('../assets/girl2.jpg')} style={styles.image} />
-              </View>
-              <View style={styles.slide}>
-                <Image source={require('../assets/girl3.jpg')} style={styles.image} />
-              </View>
-              <View style={styles.slide}>
-                <Image source={require('../assets/boy2.jpg')} style={styles.image} />
-              </View>
-              <View style={styles.slide}>
-                <Image source={require('../assets/boy3.jpg')} style={styles.image} />
-              </View> */}
             </Swiper>
 
             <View>
@@ -164,18 +141,6 @@ useEffect(() => {
               </View>
             </View>
 
-            
-            {/*<View style={styles.container}>
-            <TextInput
-              multiline={true}
-              numberOfLines={4}
-              onChangeText={(text) => setDescription(text)}
-              value={description}
-              style={styles.descriptionBox}
-              placeholder="Enter your description here"
-              //placeholderTextColor="#a9a9a9"
-            />
-  </View>*/}
             
           <View style = {styles.mainDiv}>
             <View style = {styles.insideDiv}>
