@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setBirthDate } from "../store";
 
 const EnterBirthDate = ({ navigation }) => {
-  const date = useSelector((state) => state.user.birthDate.split('/'));
+  const date = useSelector((state) => state.user.birthDate.split("/"));
   const [months, setMonths] = useState(date[0]);
   const [days, setDays] = useState(date[1]);
   const [years, setYears] = useState(date[2]);
@@ -35,7 +35,6 @@ const EnterBirthDate = ({ navigation }) => {
   const combineDate = () => {
     dispatch(setBirthDate(`${months}/${days}/${years}`));
   };
-
 
   return (
     <ImageBackground
@@ -65,7 +64,7 @@ const EnterBirthDate = ({ navigation }) => {
 
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("FourPhotos")
+            navigation.navigate("FourPhotos");
             combineDate();
           }}
           style={{

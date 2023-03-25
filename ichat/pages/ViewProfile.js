@@ -24,43 +24,44 @@ const ViewProfile = ({ navigation }) => {
           marginTop: 100,
         }}
       >
-        ARE YOU READY TO VIEW YOUR {'\t'}
+        ARE YOU READY TO VIEW YOUR {"\t"}
         <Text
-        style={{
-          color: "#efa006",
-        }}
-      >
-        PROFILE?
-      </Text>
+          style={{
+            color: "#efa006",
+          }}
+        >
+          PROFILE?
+        </Text>
       </Text>
 
-            <View 
-                style={{
-                position: "absolute",
-                right: 30,
-                bottom: 80,
-                flexDirection: "row",
-            }}>
-            <Text
-                style={{
-                    bottom: -10,
-                    paddingRight: 10,
-                    fontSize: 20,
-                    color: "#fff",
-                }}
-            >
-                Yes, take me away!
-            </Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate("PublicProfile")}
-                style={{
-                backgroundColor: "#23c0c0",
-                borderRadius: 50,
-                }}
-            >   
-                <AntDesign name="rightcircle" size={50} color="white" />
-            </TouchableOpacity>
-            </View>
+      <View
+        style={{
+          position: "absolute",
+          right: 30,
+          bottom: 80,
+          flexDirection: "row",
+        }}
+      >
+        <Text
+          style={{
+            bottom: -10,
+            paddingRight: 10,
+            fontSize: 20,
+            color: "#fff",
+          }}
+        >
+          Yes, take me away!
+        </Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("PublicProfile")}
+          style={{
+            backgroundColor: "#23c0c0",
+            borderRadius: 50,
+          }}
+        >
+          <AntDesign name="rightcircle" size={50} color="white" />
+        </TouchableOpacity>
+      </View>
 
       <View
         style={{
