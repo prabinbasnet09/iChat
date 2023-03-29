@@ -18,7 +18,6 @@ import { useColorScheme } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 
 const UserProfile = (props) => {
-  // const [description, setDescription] = useState('');
   const colorScheme = useColorScheme();
   const [theme, setTheme] = useState("light");
   const user = useSelector((state) => state.user);
@@ -34,15 +33,88 @@ const UserProfile = (props) => {
 
   return (
     <ScrollView>
-      {/*<View style={{ ...commonStyles.container, ...theme === 'light' ? lightTheme.backgroundColor : darkTheme.backgroundColor }}>
-        <Text style={{ ...commonStyles.text, ...theme === 'light' ? lightTheme.textColor : darkTheme.textColor }}>Hello World</Text>
-  </View>*/}
-
       <ImageBackground
         source={require("../assets/home.png")}
         style={{ width: "100%", height: "100%" }}
       >
-        <View
+
+<View>
+          <Image
+            source={{ uri: user.photos[0].image }}
+            style={{
+              width: "98%",
+              height: 350,
+              top: 50,
+              marginLeft: 5,
+              marginRight: 5,
+              alignContent: "center",
+            }}
+          />
+
+          <TouchableOpacity>
+            <Text
+              style={[
+                styles.profile,
+                {
+                  marginTop: -290,
+                  marginLeft: 15,
+                  color: "white",
+                  fontWeight: "bold",
+                },
+              ]}
+            >
+              PROFILE
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <Text
+              style={[
+                styles.accSetting,
+                {
+                  fontSize: 12,
+                  marginLeft: 235,
+                  marginTop: -290,
+                  color: "white",
+                  fontWeight: "bold",
+                },
+              ]}
+            >
+              ACCOUNT SETTINGS
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity onPress={props.onPress}>
+            <View
+              style={{
+                marginLeft: "30%",
+                marginTop: 50,
+                width: 150,
+                borderWidth: 2,
+                borderColor: "transparent",
+                borderColor: "white",
+                borderRadius: 100,
+                overflow: "hidden",
+                resizeMode: "cover",
+                zIndex: 1,
+                marginTop: -65
+              }}
+            >
+              <Image
+                style={{
+                  width: 150,
+                  height: 150,
+                  resizeMode: "cover",
+                }}
+                source={{ uri: user.photos[1].image }}
+              />
+            </View>
+          </TouchableOpacity>
+
+        
+
+        {/*<View
           style={[
             styles.top,
             {
@@ -109,10 +181,10 @@ const UserProfile = (props) => {
               />
             </Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         <Text style={styles.name}>{`${user.firstName} ${user.lastName}`}</Text>
-        <Text style={styles.subName}> Las Vegas, United States</Text>
+        <Text style={[styles.subName, {marginTop:0}]}> Las Vegas, United States</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={onPress} style={styles.button1}>
@@ -161,7 +233,7 @@ const UserProfile = (props) => {
           })}
         </Swiper>
 
-        <View>
+        <View style = {[styles.Img, {marginTop: 15}]}>
           <TouchableOpacity onPress={onPress} style={styles.button3}>
             <Text style={{ fontSize: 12, color: "#eee", fontWeight: "bold" }}>
               {" "}
@@ -172,7 +244,7 @@ const UserProfile = (props) => {
 
         <View style={styles.aboutMeContainer}>
           <TextInput style={styles.aboutMe} multiline={true} numberOfLines={4}>
-            Hi this is me, Susie C. Little. {"\n"}I live in Las Vegas, Nevada. I
+            Hi this is me, Susie C. Little. {"\n"} I
             go to Vegas Junior School. {"\n"}
             Welcome to iChat. This is my profile.{"\n"}
             More..
@@ -408,7 +480,7 @@ const styles = StyleSheet.create({
   },
 
   photos: {
-    height: 425,
+    height: 300,
     marginLeft: 10,
   },
 

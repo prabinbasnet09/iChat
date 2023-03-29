@@ -2,7 +2,6 @@ import React from "react";
 import {
   View,
   Text,
-  Image,
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
@@ -53,7 +52,7 @@ const ViewProfile = ({ navigation }) => {
           Yes, take me away!
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("PublicProfile")}
+          onPress={() => navigation.navigate("UserProfile")}
           style={{
             backgroundColor: "#23c0c0",
             borderRadius: 50,

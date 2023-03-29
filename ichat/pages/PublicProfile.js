@@ -9,14 +9,10 @@ import {
   TouchableOpacity,
   onPress,
   TextInput,
-  FlatList,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import * as ImagePicker from "expo-image-picker";
-import { SafeAreaView } from "react-native-safe-area-context";
-import ImageViewer from 'react-native-image-zoom-viewer';
-
 
 const PublicProfile = () => {
   const [profilePicture, setProfilePicture] = useState(null);
@@ -43,7 +39,6 @@ const PublicProfile = () => {
         source={require("../assets/home.png")}
         style={{ width: "100%", height: "500%", top: 0 }}
       >
-        
         <View>
           <Image
             source={require("../assets/publicProfile.png")}
@@ -54,16 +49,40 @@ const PublicProfile = () => {
               alignContent: "center",
             }}
           />
-          
+
           <TouchableOpacity>
-            <Text style={[styles.profile, {marginTop: -290, marginLeft: 15, color: 'white', fontWeight: "bold"}]}>PROFILE</Text>
+            <Text
+              style={[
+                styles.profile,
+                {
+                  marginTop: -290,
+                  marginLeft: 15,
+                  color: "white",
+                  fontWeight: "bold",
+                },
+              ]}
+            >
+              PROFILE
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity>
-            <Text style={[styles.accSetting, {fontSize: 12, marginLeft: 235, marginTop: -290, color: 'white', fontWeight: "bold"}]}>ACCOUNT SETTINGS</Text>
+            <Text
+              style={[
+                styles.accSetting,
+                {
+                  fontSize: 12,
+                  marginLeft: 235,
+                  marginTop: -290,
+                  color: "white",
+                  fontWeight: "bold",
+                },
+              ]}
+            >
+              ACCOUNT SETTINGS
+            </Text>
           </TouchableOpacity>
         </View>
-        
 
         <View>
           <TouchableOpacity
@@ -246,8 +265,15 @@ const PublicProfile = () => {
           <Image
             source={require("../assets/boy2.jpg")}
             style={[
-              styles.image, 
-              {height: 200, width: "30%", height: 200, marginLeft: 5, borderRadius: 15 },]}  
+              styles.image,
+              {
+                height: 200,
+                width: "30%",
+                height: 200,
+                marginLeft: 5,
+                borderRadius: 15,
+              },
+            ]}
           />
 
           <Image
@@ -257,7 +283,6 @@ const PublicProfile = () => {
               { height: 200, width: "30%", marginLeft: 5, borderRadius: 15 },
             ]}
           />
-
         </View>
 
         <View style={[styles.navigationButtons, {}]}>

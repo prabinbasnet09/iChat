@@ -5,7 +5,6 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Button,
   Alert,
 } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
@@ -43,7 +42,6 @@ const EnterEmail = ({ navigation }) => {
         style={{
           flex: 1,
           justifyContent: "flex-start",
-          // alignItems: "center",
         }}
       >
         <TouchableOpacity
@@ -57,31 +55,6 @@ const EnterEmail = ({ navigation }) => {
           <Icon name="left" size={30} color="#000" />
         </TouchableOpacity>
 
-        {/* <TouchableOpacity
-          onPress={() => navigation.navigate("enterBirthdate")}
-          style={{
-            position: "absolute",
-            right: 30,
-            bottom: 30,
-            borderRadius: 50,
-            backgroundColor: 'black',
-            color: "white",
-            textAlign: "left",
-            fontSize: 35,
-            fontWeight: "900",
-            marginLeft: 30,
-            marginTop: 60
-          }}
-        > */}
-        {/* <Icon name="rightcircle" size={50} color="#000" />
-          <Button title="Next" onPress={handleNextPress} 
-          style={{
-            backgroundColor: 'black',
-            color: "#000",
-          }}
-          /> */}
-        {/* </TouchableOpacity> */}
-
         <TouchableOpacity
           onPress={() => {
             navigation.navigate("enterBirthdate");
@@ -91,7 +64,7 @@ const EnterEmail = ({ navigation }) => {
             position: "absolute",
             right: 30,
             bottom: 30,
-            backgroundColor: "#fff",
+            backgroundColor: "white",
             borderRadius: 50,
           }}
         >
@@ -103,7 +76,7 @@ const EnterEmail = ({ navigation }) => {
             textAlign: "left",
             fontSize: 35,
             fontWeight: "900",
-            color: "#fff",
+            color: "white",
             marginLeft: 30,
             marginTop: 100,
           }}
@@ -117,27 +90,18 @@ const EnterEmail = ({ navigation }) => {
             fontWeight: "bold",
             marginLeft: 30,
             marginBottom: 50,
-            color: "#fff",
-            // backgroundColor: '#808080', // set the background color to light blue
-            // padding: 10, // add some padding to the text
-            // borderRadius: 5, // add border radius to the text
-            // borderWidth: 1, // add border width to the text
-            // borderColor: '#000', // set border color to black
+            color: "white",
             width: "50%",
           }}
         >
           We use this to recover your account.
         </Text>
 
-        {/*<Text style={{ fontSize: 10, marginLeft: 30, marginBottom: 50 }}>
-          We use this to recover your account.
-        </Text>*/}
-
         <TextInput
           style={{
             paddingHorizontal: 25,
             paddingVertical: 10,
-            backgroundColor: "#fff",
+            backgroundColor: "white",
             color: "#000",
             borderRadius: 50,
             marginHorizontal: 30,

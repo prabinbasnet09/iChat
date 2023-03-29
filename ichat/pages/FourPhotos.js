@@ -6,7 +6,6 @@ import {
   Text,
   Image,
   StyleSheet,
-  Button,
 } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/FontAwesome5";
@@ -77,7 +76,9 @@ const styles = StyleSheet.create({
 
 const FourPhotos = ({ navigation }) => {
   const dispatch = useDispatch();
-  const [images, setImages] = useState(useSelector((state) => state.user.photos));
+  const [images, setImages] = useState(
+    useSelector((state) => state.user.photos)
+  );
 
   const pickImage = async (index) => {
     await ImagePicker.launchImageLibraryAsync({
@@ -119,7 +120,6 @@ const FourPhotos = ({ navigation }) => {
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
-                
               }}
               onPress={() => {
                 pickImage(index);
@@ -140,7 +140,7 @@ const FourPhotos = ({ navigation }) => {
 
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("ViewProfile")
+          navigation.navigate("ViewProfile");
           dispatch(setPhotos(images));
         }}
         style={{
@@ -207,7 +207,7 @@ const FourPhotos = ({ navigation }) => {
             width: "50%",
           }}
         >
-          Not sure what to upload?.
+          Not sure what to upload?
         </Text>
 
         <Text

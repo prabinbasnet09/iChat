@@ -38,7 +38,6 @@ const EnterBirthDate = ({ navigation }) => {
 
   return (
     <ImageBackground
-      //source={require("./assets/birthdate.jpg")}
       source={require("../assets/birthdate.png")}
       style={{ width: "100%", height: "100%" }}
       resizeMode="cover"
@@ -47,7 +46,6 @@ const EnterBirthDate = ({ navigation }) => {
         style={{
           flex: 1,
           justifyContent: "flex-start",
-          // alignItems: "center",
         }}
       >
         {/* <PreviousScreen navigator={handleBack}/> */}
@@ -71,7 +69,7 @@ const EnterBirthDate = ({ navigation }) => {
             position: "absolute",
             right: 30,
             bottom: 30,
-            backgroundColor: "#fff",
+            backgroundColor: "white",
             borderRadius: 50,
           }}
         >
@@ -100,7 +98,7 @@ const EnterBirthDate = ({ navigation }) => {
           <TextInput
             style={{
               backgroundColor: "#000",
-              color: "#fff",
+              color: "white",
               borderRadius: 50,
               marginLeft: 30,
               paddingVertical: 10,
@@ -115,15 +113,15 @@ const EnterBirthDate = ({ navigation }) => {
             keyboardType="numeric"
             maxLength={2}
             placeholder={"MONTH"}
-            placeholderTextColor="#fff"
-            color="#fff"
+            placeholderTextColor="white"
+            color="white"
             value={months}
             onChangeText={handleMonth}
           />
           <TextInput
             style={{
               backgroundColor: "#000",
-              color: "#fff",
+              color: "white",
               borderRadius: 50,
               marginHorizontal: 20,
               paddingVertical: 10,
@@ -139,14 +137,14 @@ const EnterBirthDate = ({ navigation }) => {
             maxLength={2}
             placeholder={"DAY"}
             placeholderTextColor="#fff"
-            color="#fff"
+            color="white"
             value={days}
             onChangeText={handleDay}
           />
           <TextInput
             style={{
               backgroundColor: "#000",
-              color: "#fff",
+              color: "white",
               borderRadius: 50,
               paddingVertical: 10,
               paddingHorizontal: 20,
@@ -161,7 +159,7 @@ const EnterBirthDate = ({ navigation }) => {
             keyboardType="numeric"
             maxLength={4}
             placeholderTextColor="#fff"
-            color="#fff"
+            color="white"
             value={years}
             onChangeText={handleYear}
           />
